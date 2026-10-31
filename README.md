@@ -93,6 +93,17 @@ s.close()
 
 ## server.py
 <img width="1005" height="185" alt="{F136B890-E352-44B4-B2BC-2320B37DDB22}" src="https://github.com/user-attachments/assets/29af113a-898f-44a8-9a2e-c097605d7edd" />
+## FUNCTION USED
 
+|Function	|Meaning|
+|-----------|--------|
+|socket()|	Creates a socket|
+|bind()	|Assigns an address and port to the server|
+|listen()	|Waits for client connections|
+|accept()	|Accepts a client connection|
+|connect()|	Connects the client to the server|
+|send()	|Sends data|
+|recv()	|Receives data|
+|close()	|Closes the socket|
 ## Result:
 Thus the study of Socket Programming Completed Successfully
