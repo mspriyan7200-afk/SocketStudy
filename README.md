@@ -93,6 +93,7 @@ s.close()
 
 ## server.py
 <img width="1005" height="185" alt="{F136B890-E352-44B4-B2BC-2320B37DDB22}" src="https://github.com/user-attachments/assets/29af113a-898f-44a8-9a2e-c097605d7edd" />
+
 ## FUNCTION USED
 
 |Function	|Meaning|
