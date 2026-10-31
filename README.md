@@ -1,4 +1,4 @@
-# Ex.No:1  			Study of Socket Programming
+# Ex.No:1a  			Study of Socket Programming
 
 ## Aim: 
 To perform a study on Socket Programming
