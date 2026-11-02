@@ -52,59 +52,24 @@ Socket programming finds applications in various domains, including web developm
 3.	File Transfer Protocol: Protocols like FTP (File Transfer Protocol) utilize socket programming for transferring files between a client and a server.
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
+## Functions used
 
-### client.py
-```
-import socket
-from datetime import datetime
+|Function / Method	|Explanation	|Used in|
+|-------------------|---------------|-------|
+|socket.socket()	|Creates a new socket. It acts as an endpoint that allows two programs to communicate over a network.	|Both|
+|bind()|	Assigns an IP address and port number to the server socket so clients can connect to it.	|Server|
+|listen(5)	|Puts the server into listening mode and allows it to wait for incoming client connections. The value 5 specifies the connection backlog.|	Server|
+|accept()|	Waits for a client to connect. Once connected, it returns a new socket for communication and the client's address.	|Server|
+|connect()|	Establishes a connection between the client and the server using the server's IP address and port number.	|Client|
+|send()	|Sends data through an established socket connection. The data must be in bytes format.|	Both|
+|recv(1024)	|Receives data from the connected socket. Here, 1024 is the maximum number of bytes to receive in one call.	|Both|
+|getsockname()|	Returns the local IP address and port number of the socket. In your client code, it displays the client's own address.	|Client|
+|close()	|Closes the socket connection and releases the resources used by the socket.	|Both|
+|datetime.now()	|Gets the current date and time from the computer.|
+|strftime()	|Converts the date and time into a formatted string. For example, %d/%m/%Y %H:%M:%S displays day/month/year and time.|
+|encode()	|Converts a string into bytes so it can be sent through a socket.|
+|decode()	|Converts received bytes back into a readable string.|
+|print()|	Displays information or output on the screen.|
 
-s = socket.socket()
-s.bind(('localhost', 5000))
-s.listen(5)
-
-c, addr = s.accept()
-print("Client Address:", addr)
-now = datetime.now()
-c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
-ack = c.recv(1024).decode()
-if ack:
-    print(ack)
-c.close()
-s.close()
-```
-### server.py
-```
-import socket
-
-s = socket.socket()
-s.connect(('localhost', 5000))
-
-print(s.getsockname())
-print(s.recv(1024).decode())
-
-s.send("Acknowledgement received from the server".encode())
-
-s.close()
-
-```
-## OUTPUT
-## client.py
-<img width="827" height="211" alt="{30CB2BD2-F45A-45A0-B446-9AEEDD59F54B}" src="https://github.com/user-attachments/assets/1e88d6d9-f847-42d0-9480-67b977efe269" />
-
-## server.py
-<img width="1005" height="185" alt="{F136B890-E352-44B4-B2BC-2320B37DDB22}" src="https://github.com/user-attachments/assets/29af113a-898f-44a8-9a2e-c097605d7edd" />
-
-## FUNCTION USED
-
-|Function	|Meaning|
-|-----------|--------|
-|socket()|	Creates a socket|
-|bind()	|Assigns an address and port to the server|
-|listen()	|Waits for client connections|
-|accept()	|Accepts a client connection|
-|connect()|	Connects the client to the server|
-|send()	|Sends data|
-|recv()	|Receives data|
-|close()	|Closes the socket|
 ## Result:
 Thus the study of Socket Programming Completed Successfully
